@@ -1,7 +1,9 @@
 node {
     checkout scm
     dir('vote'){
-        def voteImage = docker.build("jpaisregistry.azurecr.io/voting-vote") 
+
+        docker.withRegistry('https://jpaisregistry.azurecr.io', 'jpais-registry') {
+        def voteImage = docker.build("voting-vote:${env.BUILD_ID}") 
 
         voteImage.push()
         voteImage.push('latest')
