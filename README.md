@@ -1,6 +1,8 @@
 Example Voting App
 =========
 
+HOLA MUNDO!
+
 A simple distributed application running across multiple Docker containers.
 
 Getting started
