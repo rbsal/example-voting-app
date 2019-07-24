@@ -3,9 +3,10 @@ node {
     dir('vote'){
 
         docker.withRegistry('https://jpaisregistry.azurecr.io', 'jpais-registry') {
-        def voteImage = docker.build("voting-vote:${env.BUILD_ID}") 
+            def voteImage = docker.build("voting-vote:${env.BUILD_ID}") 
 
-        voteImage.push()
-        voteImage.push('latest')
+            voteImage.push()
+            voteImage.push('latest')
+        }
     }
 }
